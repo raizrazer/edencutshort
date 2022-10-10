@@ -1,8 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +19,97 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root{
+  --main-color:#664DE5;
+  --main-light-gray:rgb(119,131,153);
+  --main-lightest-gray:rgba(139,148,167,0.3);
+  --main-dark-gray:rgb(81,90,111);
+}
+
+.progress{
+  position: relative;
+  width: 100%;
+}
+.progressbar{
+  transition: width 250ms;
+  position: absolute;
+  z-index: 10;
+  left: 0%;
+  top: 50%;
+  content: '';
+  background-color: var(--main-color);
+  /* width: calc(100%/5); */
+  height: 1px;
+}
+
+.progressbar.shadowbar{
+  background-color: var(--main-lightest-gray);
+  z-index: 0;
+  width: 100%;
+}
+
+.trackdigit{
+  transition: background-color 250ms;
+  z-index: 20;
+  background-color: white;
+  color: var(--main-light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 1px solid var(--main-lightest-gray);
+  aspect-ratio: 1;
+  width: 38px;
+}
+
+.trackdigit.active{ 
+  background-color: var(--main-color);
+  color: white;
+  border: 0px;
+}
+
+.title_and_description h6{
+  color: var(--main-dark-gray);
+}
+
+.submitbutton{
+  background-color: var(--main-color);
+  width: 100%;
+  padding: 0.9rem;
+  color: white;
+  border-radius: 0.3rem;
+}
+
+.optional{
+  padding-left: 4px;
+  color: var(--main-light-gray);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.websitepart{
+  border-radius: 8px;
+  background-color: var(--main-lightest-gray);
+  color: var(--main-light-gray);
+}
+
+.websitepart .website{
+  padding: 0px 1rem;
+}
+
+/* React Component Style */
+.create_new_user{
+  width: 100%;
+  max-width: 550px;
+}
+
+.tick{
+  background-color: var(--main-color);
+}
+.data-section{
+min-width: 80%;
+max-width: 350px;
+padding: 0px 5px;
 }
